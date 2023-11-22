@@ -1,0 +1,70 @@
+.homepage-container {
+  /* @apply w-full h-full p-2 sm:p-4 m-auto; */
+  @apply w-full h-full m-auto;
+  max-width: 1440px;
+}
+
+.welcome-wrapper {
+  @apply w-full h-full relative z-[10] py-6 px-4 text-white;
+}
+
+.welcome-background {
+  @apply w-full h-full brightness-[0.65];
+}
+
+.welcome-title {
+  @apply text-center text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl tracking-wide font-extrabold px-0 lg:px-16;
+}
+
+.welcome-description {
+  @apply w-full sm:w-4/5 xl:w-2/3 text-lg xs:text-xl sm:text-2xl text-center font-bold mx-auto mt-4 sm:mt-7 lg:mt-10;
+}
+
+.welcome-video {
+  @apply w-4/5 xs:w-2/3 sm:w-1/3 rounded-full mx-auto mt-20;
+}
+
+.vision-title {
+  @apply text-center text-3xl xs:text-5xl sm:text-7xl font-extrabold px-0 sm:px-20;
+}
+
+.whitepaper-btn {
+  @apply mx-auto text-3xl font-bold p-7 bg-primary hover:bg-light-purple active:bg-secondary focus:bg-secondary text-white;
+}
+
+/* ---------------- WHY ---------- */
+.moon-background {
+  @apply w-full h-full bg-center;
+}
+.why-card-container {
+  @apply flex flex-wrap justify-between mt-10 w-full md:w-3/4 xl:w-1/2 mx-auto;
+}
+
+.why-card-wrapper {
+  @apply bg-rich-purple text-white w-full;
+}
+
+.why-card-header {
+  @apply flex items-center text-lg font-bold;
+}
+
+.why-card-wrapper:hover > .why-card-header {
+  @apply bg-secondary font-bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* ---------------- WHY ---------- */
+
+.locafi-title {
+  /* @apply bg-light-primary font-bold; */
+  @apply bg-vibrant-purple font-bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-background,
+.moon-background {
+  @apply absolute top-0 left-0 bg-cover bg-no-repeat;
+}
