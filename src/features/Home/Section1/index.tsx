@@ -38,7 +38,7 @@ const Section1: React.FC<Props> = () => {
         <h1
           ref={welcomeRef}
           className={`welcome-title ${
-            isWelcomeVisible && "animate-fadeInBase"
+            isWelcomeVisible && "animate-fadeInLame"
           }`}
         >
           Welcome to
