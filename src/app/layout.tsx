@@ -5,13 +5,17 @@ import BaseLayout from "@/layouts";
 
 import "./globals.css";
 
+const app_title = "Loca.Fi - Redefining Connectivity Through Decentralization";
 const app_name = "Loca.Fi";
-const description = "Forward-Thinking Cryptocurrency";
+const description =
+  "Discover Loca.Fi, a pioneering blockchain ecosystem empowering global connectivity. Experience secure, transparent solutions fostering innovation, community engagement, and a decentralized future.";
 
 export const metadata: Metadata = {
-  title: app_name,
+  title: app_title,
   description,
   applicationName: app_name,
+  keywords:
+    "Blockchain, Connectivity, Decentralized Solutions, Community-Driven, Transparency, Security, Innovation",
   referrer: "origin-when-cross-origin",
   // metadataBase: new URL("https://ifritnetwork.com"),
   icons: {

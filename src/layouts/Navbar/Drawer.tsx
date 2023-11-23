@@ -19,6 +19,7 @@ import Anchor from "@/components/Anchor";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { getHash } from "@/utils/hash";
 
+import "../style.css";
 import "./style.css";
 
 interface Props {
@@ -28,8 +29,8 @@ interface Props {
 
 const tabsList = [
   {
-    href: "/",
-    pathname: `/`,
+    href: "#welcome",
+    pathname: `#welcome`,
     name: "HOME",
   },
   {
@@ -47,6 +48,21 @@ const tabsList = [
     pathname: `#tokenomic`,
     name: "TOKENOMIC",
   },
+  // {
+  //   href: "/roadmap",
+  //   pathname: `/roadmap`,
+  //   name: "ROADMAP",
+  // },
+  // {
+  //   href: "/battle",
+  //   pathname: `/battle`,
+  //   name: "Battle",
+  // },
+  // {
+  //   href: "/inventory",
+  //   pathname: `/inventory`,
+  //   name: "Inventory",
+  // },
 ];
 
 export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
@@ -83,10 +99,9 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
         <DrawerBody className="bg-dark-main">
           <List spacing={3}>
             {tabsList.map((item) => {
-              const isActive =
-                !!hashname && pathname === "/"
-                  ? `#${hashname}` === item.pathname
-                  : pathname === item.pathname;
+              const isActive = !!hashname
+                ? hashname === item.pathname
+                : pathname === item.pathname;
 
               return (
                 <ListItem key={item.name} onClick={onClose}>
@@ -96,7 +111,8 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
                       "font-bold",
                       // "text-white p-2 hover:text-secondary font-bold",
                       // "text-sm md:text-base text-black dark:text-white p-2 hover:bg-dark-hover font-bold",
-                      isActive ? "text-secondary" : "text-white"
+                      // isActive ? "#bf00ff" : "text-white"
+                      isActive ? "nav-anchor-active" : "nav-anchor"
                     )}
                     style={{ transition: "250" }}
                   >
@@ -111,15 +127,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
           <ConnectWallet
             className="!w-full"
             hideTestnetFaucet
-            auth={{
-              loginOptional: false,
-              onLogin(token: string) {
-                console.log("user logged in", token);
-              },
-              onLogout() {
-                console.log("user logged out");
-              },
-            }}
+            btnTitle="Connect"
           />
         </DrawerFooter>
       </DrawerContent>

@@ -68,18 +68,7 @@ const Navbar: React.FC<Props> = () => {
           <PageTabs containterClass="hidden sm:flex ml-2" />
         </div>
         <div className={clsx("!hidden sm:!flex justify-end w-1/5 md:w-1/3")}>
-          <ConnectWallet
-            hideTestnetFaucet
-            auth={{
-              loginOptional: false,
-              onLogin() {
-                console.log("user logged in");
-              },
-              onLogout() {
-                console.log("user logged out");
-              },
-            }}
-          />
+          <ConnectWallet hideTestnetFaucet btnTitle="Connect" />
         </div>
 
         {/* small devices */}

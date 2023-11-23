@@ -2,29 +2,22 @@
 import { useEffect, useState } from "react";
 import { useIsMounted } from "./useIsMounted";
 
-const getHash = () =>
-  typeof window !== "undefined"
-    ? decodeURIComponent(window.location.hash.replace("#", ""))
-    : "";
+import { getHash } from "@/utils/hash";
 
 const useHash = () => {
   const [hash, setHash] = useState(getHash());
   const isMounted = useIsMounted();
 
-  // useEffect(() => {
-  //   const handleHashChange = () => {
-  //     console.log(window.location.hash, "hash changed");
+  useEffect(() => {
+    const handleHashChange = () => {
+      setHash(getHash());
+    };
 
-  //     setHash(getHash());
-  //   };
-
-  //   window.addEventListener("hashchange", handleHashChange);
-  //   return () => {
-  //     window.removeEventListener("hashchange", handleHashChange);
-  //   };
-  // }, []);
-
-  console.log(getHash(), "getHash()");
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   return isMounted && hash ? hash : null;
 };

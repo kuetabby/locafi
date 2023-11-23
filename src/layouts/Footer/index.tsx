@@ -50,7 +50,8 @@ const AppFooter: React.FC<Props> = () => {
 
           <div className="w-full lg:w-4/5 flex">
             <Link
-              href="/"
+              href="https://x.com/LocafiERC20"
+              target="_blank"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image
@@ -63,7 +64,8 @@ const AppFooter: React.FC<Props> = () => {
               </div>
             </Link>
             <Link
-              href="/"
+              href="https://medium.com/@locafierc20"
+              target="_blank"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image
@@ -76,7 +78,8 @@ const AppFooter: React.FC<Props> = () => {
               </div>
             </Link>
             <Link
-              href="/"
+              href="https://t.me/LocafiERC20"
+              target="_blank"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image

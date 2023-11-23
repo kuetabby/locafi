@@ -1,19 +1,15 @@
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { List, ListItem } from "@chakra-ui/react";
 
-import Background4 from "@/assets/background-4.png";
 import TokenDistribution from "@/assets/tokenomic.png";
 
-import "./style.css";
+import "../style.css";
 
 interface Props {}
 
 export const Tokenomic: React.FC<Props> = () => {
   const [isTokenImgVisible, setIsTokenImgVisible] = useState(false);
-
-  const router = useRouter();
 
   const tokenImageRef = useRef<HTMLDivElement | null>(null);
 
@@ -22,9 +18,6 @@ export const Tokenomic: React.FC<Props> = () => {
       (entries) => {
         const entry = entries[0];
         setIsTokenImgVisible(entry.isIntersecting);
-        // if (entry.isIntersecting) {
-        //   router.push("#tokenomic");
-        // }
       },
       { threshold: 1 }
     );
@@ -33,19 +26,23 @@ export const Tokenomic: React.FC<Props> = () => {
   }, []);
 
   return (
-    <div className="w-full h-full relative z-[10] py-8 px-4 text-white">
-      <div id="tokenomic" className="h-20 sm:h-16 xl:h-20" />
-      <div ref={tokenImageRef} className="w-full h-full">
-        <Image
+    <>
+      <div
+        ref={tokenImageRef}
+        id="tokenomic"
+        className="h-20 sm:h-16 xl:h-20"
+      />
+      <div className="w-full h-full">
+        {/* <Image
           src={Background4}
           alt="background-4"
           //   className="w-full h-[50vw] absolute top-0 left-0 bg-cover bg-center lg:bg-top bg-no-repeat brightness-[0.65]"
           className="w-full h-full absolute top-0 left-0 bg-cover bg-no-repeat brightness-[0.65]"
-        />
+        /> */}
 
         <div className="relative">
           <h1 className="sm:hidden text-center text-3xl xs:text-5xl sm:text-7xl font-extrabold px-0 sm:px-20 animate-slideInRightBasic">
-            <span className="text-secondary sm:ml-2">Tokenomic</span>
+            <span className="locafi-title sm:ml-2">Tokenomic</span>
             {/* <span className="locafi-title ml-2">Loca.Fi</span> */}
           </h1>
           <div className="w-full xl:w-11/12 flex flex-wrap justify-between items-stretch mx-auto mt-3">
@@ -57,7 +54,7 @@ export const Tokenomic: React.FC<Props> = () => {
               <Image
                 src={TokenDistribution}
                 alt="tokenomic"
-                className="rounded-xl sm:h-[50vw] 2xl:h-[35vw]"
+                className="rounded-xl sm:h-[50vw] 2xl:h-full 3xl:h-[25vw]"
               />
             </div>
             <div
@@ -66,18 +63,33 @@ export const Tokenomic: React.FC<Props> = () => {
               }`}
             >
               <h1 className="hidden sm:block text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold mb-6 animate-pulseBasic">
-                <span className="text-secondary sm:ml-2">Tokenomic</span>
+                <span className="locafi-title sm:ml-2">Tokenomic</span>
               </h1>
               <List className="text-base lg:text-2xl xl:text-3xl font-semibold xs:px-2 sm:px-0">
                 <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
-                  Total Supply : 1,000,000,000 $LOFI
+                  Name : LOCAFI
                 </ListItem>
-                <ListItem className="lg:mt-4">
-                  ⦿ Liquidty 800,000,000(80%)
+                <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
+                  Symbol : LOFI
                 </ListItem>
-                <ListItem>⦿ Burn 100,000,000 (10%)</ListItem>
-                <ListItem>⦿ Staking Farming 50,000,000 (5%)</ListItem>
-                <ListItem>⦿ Cex Listing50,000,000 (5%)</ListItem>
+                <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
+                  Decimal : 9
+                </ListItem>
+                <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
+                  Total Supply : 555,000,000
+                </ListItem>
+                <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
+                  Tax Buy/Sell : 5
+                </ListItem>
+                <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
+                  Network : ETHEREUM
+                </ListItem>
+                <ListItem className="mt-2 sm:mt-4 lg:mt-6">
+                  ⦿ Liquidty 85%
+                </ListItem>
+                <ListItem>⦿ Staking Farming 5%</ListItem>
+                <ListItem>⦿ CEX 5%</ListItem>
+                <ListItem>⦿ Partnership 5%</ListItem>
               </List>
             </div>
             {/* <div className="w-1/2 lg:w-full">
@@ -119,6 +131,6 @@ export const Tokenomic: React.FC<Props> = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

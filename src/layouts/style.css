@@ -23,7 +23,7 @@
 }
 
 .nav-anchor-active {
-  @apply bg-primary font-bold;
+  @apply bg-secondary font-bold;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

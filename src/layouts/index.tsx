@@ -1,6 +1,5 @@
 "use client";
 import React, { PropsWithChildren, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Button, useDisclosure } from "@chakra-ui/react";
 import clsx from "clsx";
 import { ArrowUpOutlined } from "@ant-design/icons";
@@ -22,8 +21,6 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
     onOpen: onOpenScroll,
     onClose: onCloseScroll,
   } = useDisclosure();
-
-  const navigate = useRouter();
 
   useEffect(() => {
     window?.addEventListener("scroll", handleScroll);
