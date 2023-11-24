@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ConnectWallet } from "@thirdweb-dev/react";
@@ -7,14 +8,14 @@ import clsx from "clsx";
 import { MenuOutlined } from "@ant-design/icons";
 
 import PageTabs from "../PageTabs";
+import { NavbarDrawer } from "./Drawer";
 
 import { lato } from "@/utils/font";
 
 import AppLogo from "@/assets/logo-app.png";
+import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "./style.css";
-import { useEffect } from "react";
-import { NavbarDrawer } from "./Drawer";
 
 interface Props {}
 // linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%)
@@ -68,7 +69,11 @@ const Navbar: React.FC<Props> = () => {
           <PageTabs containterClass="hidden sm:flex ml-2" />
         </div>
         <div className={clsx("!hidden sm:!flex justify-end w-1/5 md:w-1/3")}>
-          <ConnectWallet hideTestnetFaucet btnTitle="Connect" />
+          <ConnectWallet
+            hideTestnetFaucet
+            btnTitle="Connect"
+            modalTitleIconUrl={AppLogoTransparent.src}
+          />
         </div>
 
         {/* small devices */}

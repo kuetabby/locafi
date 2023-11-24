@@ -19,6 +19,8 @@ import Anchor from "@/components/Anchor";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { getHash } from "@/utils/hash";
 
+import AppLogoTransparent from "@/assets/logo-transparent.png";
+
 import "../style.css";
 import "./style.css";
 
@@ -128,6 +130,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
             className="!w-full"
             hideTestnetFaucet
             btnTitle="Connect"
+            modalTitleIconUrl={AppLogoTransparent.src}
           />
         </DrawerFooter>
       </DrawerContent>

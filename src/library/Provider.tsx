@@ -10,6 +10,7 @@ import {
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
+// import { Ethereum, Goerli } from "@thirdweb-dev/chains";
 // import chakraTheme from "@chakra-ui/theme";
 
 // import "react-tooltip/dist/react-tooltip.css";
@@ -45,6 +46,7 @@ const Provider: React.FC<Props> = ({ children }) => {
           <ThirdwebProvider
             activeChain="goerli"
             clientId={THIRDWEB_KEY}
+            // supportedChains={[Ethereum, Goerli]}
             // authConfig={{
             //   authUrl: "/thirdweb/auth",
             //   domain: "http://localhost:8000",
