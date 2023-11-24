@@ -4,7 +4,7 @@ import Image from "next/image";
 import { About } from "./About";
 
 // import Background3 from "@/assets/background-3.png";
-import Background5 from "@/assets/background-5.jpeg";
+import Background5 from "@/assets/background-5.png";
 
 import "../style.css";
 

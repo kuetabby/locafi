@@ -7,6 +7,8 @@ import Anchor from "@/components/Anchor";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import useHash from "@/hooks/useHashname";
 
+import { getHash } from "@/utils/hash";
+
 import "./style.css";
 
 interface Props {
@@ -19,10 +21,12 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
 
   const isMounted = useIsMounted();
 
+  const defaultHash = getHash();
+
   const tabsList = [
     {
-      href: "#welcome",
-      pathname: `#welcome`,
+      href: "/",
+      pathname: `/`,
       name: "HOME",
     },
     {
@@ -69,9 +73,9 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
       )}
     >
       {tabsList.map((item) => {
-        const isActive = !!hashname
+        const isActive = !!defaultHash
           ? hashname === item.pathname
-          : pathname === item.pathname;
+          : !defaultHash && pathname === item.pathname;
 
         // const isActive = pathname === item.pathname;
         return (

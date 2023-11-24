@@ -22,6 +22,8 @@
 
 .navbar-scroll {
   @apply fixed py-2 bg-rich-purple opacity-95;
+  @apply top-0 left-[50%];
+  transform: translate(-50%, 0%);
   /* background: linear-gradient(
     180deg,
     rgba(60, 60, 60, 1) 0%,
