@@ -25,7 +25,7 @@ const Section3: React.FC<Props> = () => {
       <div className="h-20 sm:h-16 xl:h-20" />
       <Tokenomic />
 
-      <div className="h-20 sm:h-16 xl:h-32" />
+      <div className="h-28 xl:h-32" />
       <div className="w-full h-full max-w-screen-xl mx-auto">
         <div className="relative flex lg:px-2 xl:px-16 2xl:px-0">
           <div className="w-full sm:w-3/4 lg:w-1/2">

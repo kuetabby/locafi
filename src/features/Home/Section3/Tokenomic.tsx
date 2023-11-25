@@ -54,7 +54,7 @@ export const Tokenomic: React.FC<Props> = () => {
               <Image
                 src={TokenDistribution}
                 alt="tokenomic"
-                className="rounded-xl sm:h-[50vw] 2xl:h-full 3xl:h-[25vw]"
+                className="rounded-xl sm:h-[50vw] 2xl:h-[35vw] 3xl:h-[25vw]"
               />
             </div>
             <div
