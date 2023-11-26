@@ -57,7 +57,7 @@ const AppFooter: React.FC<Props> = () => {
               <Image
                 src={TwitterLogo}
                 alt="tw-logo"
-                className="w-10 lg:w-14 h-10 lg:h-14"
+                className="w-10 lg:w-12 h-10 lg:h-12"
               />
               <div className="hidden sm:block text-xs md:text-sm font-semibold ml-1 sm:ml-2">
                 Twitter
@@ -71,7 +71,7 @@ const AppFooter: React.FC<Props> = () => {
               <Image
                 src={MediumLogo}
                 alt="dc-logo"
-                className="w-10 lg:w-14 h-10 lg:h-14 !rounded-full"
+                className="w-10 lg:w-12 h-10 lg:h-12 !rounded-full"
               />
               <div className="hidden sm:block text-xs md:text-sm font-semibold ml-1 sm:ml-2">
                 Medium
@@ -85,7 +85,7 @@ const AppFooter: React.FC<Props> = () => {
               <Image
                 src={TelegramLogo}
                 alt="tele-logo"
-                className="w-10 lg:w-14 h-10 lg:h-14"
+                className="w-10 lg:w-12 h-10 lg:h-12"
               />
               <div className="hidden sm:block text-xs md:text-sm font-semibold ml-1 sm:ml-2">
                 Telegram
