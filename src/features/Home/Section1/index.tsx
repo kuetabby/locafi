@@ -45,13 +45,13 @@ const Section1: React.FC<Props> = () => {
           <span className="locafi-title ml-2">Loca.Fi</span>
         </h1>
         <div className="welcome-description">
-          A trailblazing Layer 2 blockchain initiative driving industry
-          transformation through decentralized solutions. Harnessing advanced
-          Layer 2 technology, Loca.Fi amplifies scalability, efficiency,
-          transparency, security, and user privacy.
+          A pioneering Layer 2 blockchain initiative, Loca.Fi is propelling
+          industry transformation through decentralized solutions. Leveraging
+          advanced Layer 2 technology, Loca.Fi enhances scalability, efficiency,
+          transparency, and security for users.
           {/* As a leader in Layer 2
-          advancements, Loca.Fi is dedicated to pioneering both technological
-          innovation and data confidentiality. */}
+          advancements, Loca.Fi is dedicated to pioneering technological
+          innovation and ensuring data confidentiality. */}
         </div>
 
         <video

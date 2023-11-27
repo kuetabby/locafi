@@ -61,6 +61,13 @@ const Section3: React.FC<Props> = () => {
                   as={LockOutlined}
                   className="text-secondary text-2xl font-semibold"
                 />
+                Swap dApp
+              </ListItem>
+              <ListItem className="feature-inactive">
+                <ListIcon
+                  as={LockOutlined}
+                  className="text-secondary text-2xl font-semibold"
+                />
                 Mainnet
               </ListItem>
               <ListItem className="feature-inactive">
