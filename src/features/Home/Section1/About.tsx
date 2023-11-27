@@ -51,12 +51,13 @@ export const About: React.FC<Props> = () => {
       </h1>
 
       <div className="w-full sm:w-4/5 xl:w-2/3 text-lg xs:text-xl sm:text-2xl text-center font-bold mx-auto mt-3">
-        At the heart of Loca.Fi's vision is the belief that blockchain
-        technology can empower individuals and businesses alike by providing
-        them with secure, transparent, and efficient tools to navigate an
-        increasingly digital world. By fostering a decentralized ecosystem,
-        Locafi aims to redefine traditional paradigms and drive positive change
-        across industry
+        At Loca.Fi, our commitment goes beyond innovation; it's about ensuring
+        user privacy alongside industry revolution. We envision a future where
+        privacy seamlessly integrates with technological progress within our
+        scalable blockchain ecosystem. Loca.Fi is dedicated not only to
+        reshaping industries but also safeguarding user privacy, creating a
+        future where technology and individual confidentiality coexist
+        harmoniously.
       </div>
 
       <div ref={whitepaperRef} className="w-full text-center mt-10">
