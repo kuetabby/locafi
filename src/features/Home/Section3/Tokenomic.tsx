@@ -85,7 +85,7 @@ export const Tokenomic: React.FC<Props> = () => {
                   Network : ETHEREUM
                 </ListItem>
                 <ListItem className="mt-2 sm:mt-4 lg:mt-6">
-                  ⦿ Liquidty 85%
+                  ⦿ Liquidity 85%
                 </ListItem>
                 <ListItem>⦿ Staking Farming 5%</ListItem>
                 <ListItem>⦿ CEX 5%</ListItem>
