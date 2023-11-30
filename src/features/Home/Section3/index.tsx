@@ -30,7 +30,7 @@ const Section3: React.FC<Props> = () => {
         <div className="relative flex lg:px-2 xl:px-16 2xl:px-0">
           <div className="w-full sm:w-3/4 lg:w-1/2">
             <h1 className="text-2xl sm:text-3xl font-extrabold feature-inactive">
-              JOURNEY THROUGH THE LOCAFI ECOSYSTEM, THE CORE OF COMMUNITY
+              JOURNEY THROUGH THE LOCA.FI ECOSYSTEM, THE CORE OF COMMUNITY
             </h1>
 
             <List className="mt-2 sm:mt-4 text-2xl font-semibold">

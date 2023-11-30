@@ -67,7 +67,7 @@ export const Tokenomic: React.FC<Props> = () => {
               </h1>
               <List className="text-base lg:text-2xl xl:text-3xl font-semibold xs:px-2 sm:px-0">
                 <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
-                  Name : LOCAFI
+                  Name : Loca.Fi
                 </ListItem>
                 <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
                   Symbol : LOFI
@@ -76,7 +76,7 @@ export const Tokenomic: React.FC<Props> = () => {
                   Decimal : 9
                 </ListItem>
                 <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
-                  Total Supply : 555,000,000
+                  Total Supply : 100,000,000
                 </ListItem>
                 <ListItem className="text-lg lg:text-3xl xl:text-4xl font-bold">
                   Tax Buy/Sell : 5
