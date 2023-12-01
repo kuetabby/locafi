@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
 import {
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -11,15 +12,16 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-import { ConnectWallet } from "@thirdweb-dev/react";
+// import { ConnectWallet } from "@thirdweb-dev/react";
 import clsx from "clsx";
 
 import Anchor from "@/components/Anchor";
 
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { getHash } from "@/utils/hash";
+import useHash from "@/hooks/useHashname";
 
-import AppLogoTransparent from "@/assets/logo-transparent.png";
+// import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "../style.css";
 import "./style.css";
@@ -31,8 +33,8 @@ interface Props {
 
 const tabsList = [
   {
-    href: "#welcome",
-    pathname: `#welcome`,
+    href: "/",
+    pathname: `/`,
     name: "HOME",
   },
   {
@@ -71,10 +73,11 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
   const btnRef = useRef() as any;
 
   const pathname = usePathname();
+  const hashname = useHash();
 
   const isMounted = useIsMounted();
 
-  const hashname = getHash();
+  const defaultHash = getHash();
 
   if (!isMounted) {
     return null;
@@ -101,9 +104,9 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
         <DrawerBody className="bg-dark-main">
           <List spacing={3}>
             {tabsList.map((item) => {
-              const isActive = !!hashname
+              const isActive = !!defaultHash
                 ? hashname === item.pathname
-                : pathname === item.pathname;
+                : !defaultHash && pathname === item.pathname;
 
               return (
                 <ListItem key={item.name} onClick={onClose}>
@@ -126,12 +129,16 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
           </List>
         </DrawerBody>
         <DrawerFooter className="bg-dark-main">
-          <ConnectWallet
+          <Button className="tw-connect-wallet w-full" isDisabled>
+            Launch dApp
+          </Button>
+
+          {/* <ConnectWallet
             className="!w-full"
             hideTestnetFaucet
             btnTitle="Connect"
             modalTitleIconUrl={AppLogoTransparent.src}
-          />
+          /> */}
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

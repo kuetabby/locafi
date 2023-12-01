@@ -68,7 +68,7 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   return (
     <div
       className={clsx(
-        "w-full md:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
+        "w-full sm:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
         containterClass
       )}
     >

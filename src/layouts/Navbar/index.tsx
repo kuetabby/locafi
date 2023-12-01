@@ -2,7 +2,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ConnectWallet } from "@thirdweb-dev/react";
+// import { useRouter } from "next/router";
+// import { ConnectWallet } from "@thirdweb-dev/react";
 import { Button, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 import clsx from "clsx";
 import { MenuOutlined } from "@ant-design/icons";
@@ -13,7 +14,7 @@ import { NavbarDrawer } from "./Drawer";
 import { lato } from "@/utils/font";
 
 import AppLogo from "@/assets/logo-app.png";
-import AppLogoTransparent from "@/assets/logo-transparent.png";
+// import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "./style.css";
 
@@ -31,6 +32,7 @@ const Navbar: React.FC<Props> = () => {
     onClose: onCloseDrawer,
   } = useDisclosure();
 
+  // const router = useRouter()
   const [isEqual640] = useMediaQuery("(min-width: 640px)");
 
   useEffect(() => {
@@ -57,7 +59,7 @@ const Navbar: React.FC<Props> = () => {
   return (
     <div className={clsx("navbar-container", lato.className)}>
       <div className={clsx(isScroll ? "navbar-scroll" : "navbar")}>
-        <div className="w-1/4 sm:w-2/3 flex items-center">
+        <div className="w-1/4 sm:w-[70%] flex items-center">
           {/* <div className="text-xl font-extrabold">LOCA.FI</div> */}
           <Link href="/" className={`logo-container text-white`}>
             <Image
@@ -69,11 +71,14 @@ const Navbar: React.FC<Props> = () => {
           <PageTabs containterClass="hidden sm:flex ml-2" />
         </div>
         <div className={clsx("!hidden sm:!flex justify-end w-1/5 md:w-1/3")}>
-          <ConnectWallet
+          <Button className="tw-connect-wallet w-auto" isDisabled>
+            Launch dApp
+          </Button>
+          {/* <ConnectWallet
             hideTestnetFaucet
             btnTitle="Connect"
             modalTitleIconUrl={AppLogoTransparent.src}
-          />
+          /> */}
         </div>
 
         {/* small devices */}
