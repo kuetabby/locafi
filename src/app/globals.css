@@ -36,5 +36,5 @@ body {
 }
 
 .tw-connect-wallet {
-  @apply bg-primary hover:bg-light-purple active:!bg-secondary focus:!bg-secondary disabled:!bg-secondary !text-white;
+  @apply bg-primary hover:bg-light-purple active:!bg-light-purple focus:!bg-light-purple disabled:!bg-light-purple !text-white;
 }
