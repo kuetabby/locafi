@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-import Honeycomb from "@/assets/honeycomb.png";
+// import Honeycomb from "@/assets/honeycomb.png";
+import Solidproof from "@/assets/solidproof.png";
 import Dextools from "@/assets/dextools.png";
 import Dexscreener from "@/assets/dexscreener.png";
 import Uniswap from "@/assets/uniswap.png";
@@ -38,21 +39,26 @@ export const FindUs: React.FC<Props> = () => {
           alt="honeycomb"
           className="w-full h-full absolute top-0 bg-cover bg-no-repeat opacity-90 blur-[1px]"
         /> */}
-        <div className="w-full flex flex-wrap justify-center items-center relative px-2">
+        <div className="w-full flex flex-wrap justify-between items-center relative px-2">
           <Image
             src={Uniswap}
             alt="uniswap"
-            className="object-contain w-full sm:w-1/3"
+            className="object-contain w-full sm:w-[22.5%] my-2 sm:my-0"
+          />
+          <Image
+            src={Solidproof}
+            alt="solidproof"
+            className="object-contain w-full sm:w-[22.5%] mb-2 sm:mb-0"
           />
           <Image
             src={Dexscreener}
             alt="dextools"
-            className="object-contain w-full sm:w-1/3"
+            className="object-contain w-full sm:w-[22.5%]"
           />
           <Image
             src={Dextools}
             alt="dextools"
-            className="object-contain w-full sm:w-1/3 h-[30vw] sm:h-full"
+            className="object-contain w-full sm:w-[22.5%] my-2 sm:my-0 h-[30vw] sm:h-full"
           />
           {/* <Image
             src={Dextools}
