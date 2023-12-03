@@ -52,6 +52,7 @@ const AppFooter: React.FC<Props> = () => {
             <Link
               href="https://x.com/LocafiERC20"
               target="_blank"
+              rel="noopener noreferrer"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image
@@ -66,6 +67,7 @@ const AppFooter: React.FC<Props> = () => {
             <Link
               href="https://medium.com/@locafierc20"
               target="_blank"
+              rel="noopener noreferrer"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image
@@ -80,6 +82,7 @@ const AppFooter: React.FC<Props> = () => {
             <Link
               href="https://t.me/LocafiERC20"
               target="_blank"
+              rel="noopener noreferrer"
               className="w-1/3 flex justify-center items-center mx-auto hover:text-blue-500"
             >
               <Image
@@ -99,7 +102,14 @@ const AppFooter: React.FC<Props> = () => {
             <CopyrightOutlined style={{ fontSize: "0.75em" }} />
             <div className="ml-2 text-xs font-semibold">
               2023 <span className="lg:text-sm">Loca.Fi</span>. All Right
-              Reserved
+              Reserved.{" "}
+              <Link
+                href="mailto:locafierc20@outlook.com"
+                rel="noopener noreferrer"
+                className="font-extrabold underline underline-offset-4 hover:text-blue-500"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

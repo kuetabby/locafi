@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@chakra-ui/react";
-import { SwapRightOutlined } from "@ant-design/icons";
+import { CopyOutlined, SwapRightOutlined } from "@ant-design/icons";
 
-// import { useCopyText } from "@/hooks/useCopyText";
+import { useCopyText } from "@/hooks/useCopyText";
 
 import "../style.css";
 
@@ -15,7 +15,7 @@ export const About: React.FC<Props> = () => {
   const [isVisionVisible, setIsVisionVisible] = useState(false);
   const [isWhitepaperVisible, setIsWhitepaperVisible] = useState(false);
 
-  // const [copyContent] = useCopyText();
+  const [copyContent] = useCopyText();
 
   const visionRef = useRef<HTMLDivElement | null>(null);
   const whitepaperRef = useRef<HTMLDivElement | null>(null);
@@ -65,10 +65,10 @@ export const About: React.FC<Props> = () => {
         <div className="mb-4 w-full">
           <div className="text-xl lg:text-2xl font-bold">
             CA : {contractAddress}
-            {/* <CopyOutlined
+            <CopyOutlined
               className="ml-2 cursor-pointer hover:text-secondary"
               onClick={() => copyContent(contractAddress)}
-            /> */}
+            />
           </div>
         </div>
         <Link href="https://loca-fi.gitbook.io" target="_blank">
