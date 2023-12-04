@@ -3,7 +3,8 @@ import { List, ListIcon, ListItem } from "@chakra-ui/react";
 import {
   // CheckCircleOutlined,
   LockOutlined,
-  RocketOutlined,
+  UnlockOutlined,
+  // RocketOutlined,
 } from "@ant-design/icons";
 
 import { Tokenomic } from "./Tokenomic";
@@ -37,8 +38,8 @@ const Section3: React.FC<Props> = () => {
               <ListItem className="feature-active">
                 <ListIcon
                   // as={RocketOutlined}
-                  as={LockOutlined}
-                  className="text-secondary text-2xl font-semibold"
+                  as={UnlockOutlined}
+                  className="text-white text-2xl font-semibold"
                 />
                 Testnet
               </ListItem>

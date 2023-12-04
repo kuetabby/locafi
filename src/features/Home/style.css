@@ -74,7 +74,7 @@
 
 /* ---------------- FEATURE ---------- */
 .feature-active {
-  @apply bg-vibrant-purple;
+  @apply bg-light-purple;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
