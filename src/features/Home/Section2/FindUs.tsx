@@ -65,16 +65,30 @@ export const FindUs: React.FC<Props> = () => {
               className="object-contain w-full h-full"
             />
           </Link>
-          <Image
-            src={Dexscreener}
-            alt="dextools"
-            className="object-contain w-full sm:w-[22.5%] h-20"
-          />
-          <Image
-            src={Dextools}
-            alt="dextools"
-            className="object-contain w-full sm:w-[22.5%] my-2 sm:my-0 h-[20vw] xs:h-[15vw] sm:h-full"
-          />
+          <Link
+            href="https://dexscreener.com/ethereum/0x68dda4b6fee9fc6e527c238688f08a1a40a60183"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-[22.5%] h-20"
+          >
+            <Image
+              src={Dexscreener}
+              alt="dextools"
+              className="object-contain w-full h-full"
+            />
+          </Link>
+          <Link
+            href="http://dextools.io/app/ether/pair-explorer/0x68DDA4b6FEE9FC6E527c238688f08A1a40A60183"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-[22.5%] my-2 sm:my-0 h-[20vw] xs:h-[15vw] sm:h-full"
+          >
+            <Image
+              src={Dextools}
+              alt="dextools"
+              className="object-contain w-full h-full"
+            />
+          </Link>
           {/* <Image
             src={Dextools}
             alt="dextools"
