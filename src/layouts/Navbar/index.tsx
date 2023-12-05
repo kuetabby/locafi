@@ -2,8 +2,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { useRouter } from "next/router";
-// import { ConnectWallet } from "@thirdweb-dev/react";
+import { usePathname } from "next/navigation";
+import { ConnectWallet } from "@thirdweb-dev/react";
 import { Button, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 import clsx from "clsx";
 import { MenuOutlined } from "@ant-design/icons";
@@ -14,13 +14,16 @@ import { NavbarDrawer } from "./Drawer";
 import { lato } from "@/utils/font";
 
 import AppLogo from "@/assets/logo-app.png";
-// import AppLogoTransparent from "@/assets/logo-transparent.png";
+import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "./style.css";
 
 interface Props {}
-// linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%)
+
 const Navbar: React.FC<Props> = () => {
+  const pathname = usePathname();
+  const isDappPath = pathname.toLocaleLowerCase().includes("dapp");
+
   const {
     isOpen: isScroll,
     onOpen: onOpenScroll,
@@ -71,21 +74,22 @@ const Navbar: React.FC<Props> = () => {
           <PageTabs containterClass="hidden sm:flex ml-2" />
         </div>
         <div className={clsx("!hidden sm:!flex justify-end w-1/5 md:w-1/3")}>
-          <Button className="tw-connect-wallet w-auto" isDisabled>
-            Launch dApp
-          </Button>
-          {/* <ConnectWallet
-            hideTestnetFaucet
-            btnTitle="Connect"
-            modalTitleIconUrl={AppLogoTransparent.src}
-          /> */}
+          {isDappPath ? (
+            <ConnectWallet
+              hideTestnetFaucet
+              btnTitle="Connect"
+              modalTitleIconUrl={AppLogoTransparent.src}
+            />
+          ) : (
+            <Link href="/dapp/stake" className="w-auto">
+              <Button className="tw-connect-wallet w-full">Launch dApp</Button>
+            </Link>
+          )}
         </div>
 
         {/* small devices */}
         <div className="sm:hidden w-1/2 text-center text-3xl font-extrabold">
           Loca.Fi
-          {/* <span className="text-white">Loca.Fi</span> */}
-          {/* <span className="navbar-title">Loca.Fi</span> */}
         </div>
         <div className="sm:hidden w-1/4 text-right animate-fadeInBasic">
           <Button

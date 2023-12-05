@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -20,46 +20,49 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   const hashname = useHash();
 
   const isMounted = useIsMounted();
+  const isDappPath = pathname.toLocaleLowerCase().includes("dapp");
 
   const defaultHash = getHash();
 
-  const tabsList = [
-    {
-      href: "/",
-      pathname: `/`,
-      name: "HOME",
-    },
-    {
-      href: "#about",
-      pathname: `#about`,
-      name: "ABOUT",
-    },
-    {
-      href: "#why",
-      pathname: `#why`,
-      name: "WHY US",
-    },
-    {
-      href: "#tokenomic",
-      pathname: `#tokenomic`,
-      name: "TOKENOMIC",
-    },
-    // {
-    //   href: "/roadmap",
-    //   pathname: `/roadmap`,
-    //   name: "ROADMAP",
-    // },
-    // {
-    //   href: "/battle",
-    //   pathname: `/battle`,
-    //   name: "Battle",
-    // },
-    // {
-    //   href: "/inventory",
-    //   pathname: `/inventory`,
-    //   name: "Inventory",
-    // },
-  ];
+  const tabsList = useMemo(() => {
+    if (isDappPath) {
+      return [
+        {
+          href: "/",
+          pathname: `/`,
+          name: "HOME",
+        },
+        {
+          href: "/dapp/stake",
+          pathname: `/dapp/stake`,
+          name: "STAKING",
+        },
+      ];
+    }
+
+    return [
+      {
+        href: "/",
+        pathname: `/`,
+        name: "HOME",
+      },
+      {
+        href: "#about",
+        pathname: `#about`,
+        name: "ABOUT",
+      },
+      {
+        href: "#why",
+        pathname: `#why`,
+        name: "WHY US",
+      },
+      {
+        href: "#tokenomic",
+        pathname: `#tokenomic`,
+        name: "TOKENOMIC",
+      },
+    ];
+  }, [isDappPath]);
 
   if (!isMounted) {
     return null;
@@ -68,7 +71,9 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   return (
     <div
       className={clsx(
-        "w-full sm:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
+        isDappPath
+          ? "w-full sm:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-2/12 justify-between"
+          : "w-full sm:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
         containterClass
       )}
     >
@@ -93,38 +98,6 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
           </Anchor>
         );
       })}
-      {/* <Menu placement="bottom">
-        <MenuButton
-          as={Button}
-          variant={"unstyled"}
-          className="text-white p-2 hover:text-secondary font-bold"
-          style={{ transition: "250" }}
-        >
-          Market
-        </MenuButton>
-        <MenuList className="bg-dark-secondary text-white py-1">
-          <MenuItem
-            as={Link}
-            href="/marketplace"
-            className={clsx(
-              "bg-dark-secondary hover:bg-secondary",
-              pathname === "/marketplace" && "!text-primary"
-            )}
-          >
-            Marketplace
-          </MenuItem>
-          <MenuItem
-            as={Link}
-            href="/shop"
-            className={clsx(
-              "bg-dark-secondary hover:bg-secondary",
-              pathname === "/shop" && "!text-primary"
-            )}
-          >
-            Shop
-          </MenuItem>
-        </MenuList>
-      </Menu> */}
     </div>
   );
 };

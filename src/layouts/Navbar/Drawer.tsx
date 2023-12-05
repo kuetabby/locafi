@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Button,
@@ -12,7 +13,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-// import { ConnectWallet } from "@thirdweb-dev/react";
+import { ConnectWallet } from "@thirdweb-dev/react";
 import clsx from "clsx";
 
 import Anchor from "@/components/Anchor";
@@ -21,7 +22,7 @@ import { useIsMounted } from "@/hooks/useIsMounted";
 import { getHash } from "@/utils/hash";
 import useHash from "@/hooks/useHashname";
 
-// import AppLogoTransparent from "@/assets/logo-transparent.png";
+import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "../style.css";
 import "./style.css";
@@ -31,44 +32,6 @@ interface Props {
   onClose: () => void;
 }
 
-const tabsList = [
-  {
-    href: "/",
-    pathname: `/`,
-    name: "HOME",
-  },
-  {
-    href: "#about",
-    pathname: `#about`,
-    name: "ABOUT",
-  },
-  {
-    href: "#why",
-    pathname: `#why`,
-    name: "WHY US",
-  },
-  {
-    href: "#tokenomic",
-    pathname: `#tokenomic`,
-    name: "TOKENOMIC",
-  },
-  // {
-  //   href: "/roadmap",
-  //   pathname: `/roadmap`,
-  //   name: "ROADMAP",
-  // },
-  // {
-  //   href: "/battle",
-  //   pathname: `/battle`,
-  //   name: "Battle",
-  // },
-  // {
-  //   href: "/inventory",
-  //   pathname: `/inventory`,
-  //   name: "Inventory",
-  // },
-];
-
 export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
   const btnRef = useRef() as any;
 
@@ -76,8 +39,49 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
   const hashname = useHash();
 
   const isMounted = useIsMounted();
+  const isDappPath = pathname.toLocaleLowerCase().includes("dapp");
 
   const defaultHash = getHash();
+
+  const tabsList = useMemo(() => {
+    if (isDappPath) {
+      return [
+        {
+          href: "/",
+          pathname: `/`,
+          name: "HOME",
+        },
+        {
+          href: "/dapp/stake",
+          pathname: `/dapp/stake`,
+          name: "STAKING",
+        },
+      ];
+    }
+
+    return [
+      {
+        href: "/",
+        pathname: `/`,
+        name: "HOME",
+      },
+      {
+        href: "#about",
+        pathname: `#about`,
+        name: "ABOUT",
+      },
+      {
+        href: "#why",
+        pathname: `#why`,
+        name: "WHY US",
+      },
+      {
+        href: "#tokenomic",
+        pathname: `#tokenomic`,
+        name: "TOKENOMIC",
+      },
+    ];
+  }, [isDappPath]);
 
   if (!isMounted) {
     return null;
@@ -129,16 +133,18 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
           </List>
         </DrawerBody>
         <DrawerFooter className="bg-dark-main">
-          <Button className="tw-connect-wallet w-full" isDisabled>
-            Launch dApp
-          </Button>
-
-          {/* <ConnectWallet
-            className="!w-full"
-            hideTestnetFaucet
-            btnTitle="Connect"
-            modalTitleIconUrl={AppLogoTransparent.src}
-          /> */}
+          {isDappPath ? (
+            <ConnectWallet
+              className="!w-full"
+              hideTestnetFaucet
+              btnTitle="Connect"
+              modalTitleIconUrl={AppLogoTransparent.src}
+            />
+          ) : (
+            <Link href="/dapp/stake" className="w-full">
+              <Button className="tw-connect-wallet w-full">Launch dApp</Button>
+            </Link>
+          )}
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
