@@ -1,0 +1,30 @@
+.stakepage-container {
+  @apply w-full h-full p-2 sm:p-4 m-auto;
+  /* @apply w-full h-full m-auto; */
+  max-width: 1440px;
+}
+
+.stake-background {
+  @apply w-full h-full bg-center;
+  @apply absolute top-0 left-0 bg-cover bg-no-repeat;
+}
+
+.btn-stake {
+  @apply !w-full sm:!w-[30%] !h-11 !min-w-max !min-h-min mt-1 sm:mt-0;
+}
+
+.btn-unstake,
+.btn-claim {
+  @apply w-full sm:w-[45%] !h-10 !min-w-max !min-h-min;
+}
+
+.btn-claim {
+  @apply mt-2 sm:mt-0;
+}
+
+.btn-stake,
+.btn-unstake,
+.btn-claim {
+  @apply text-white font-semibold;
+  @apply bg-primary hover:bg-light-purple active:bg-secondary focus:bg-secondary;
+}
