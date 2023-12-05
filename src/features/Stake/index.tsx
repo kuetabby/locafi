@@ -106,28 +106,31 @@ const Stake: React.FC<Props> = () => {
   }, [stakingTokenBalance]);
 
   const displayTotalStaked = useMemo(() => {
-    if (stakeInfo) {
-      const total = Number(
-        ethers.utils.formatEther(stakeInfo[0].toString())
-      ).toFixed(2);
+    if (stakeInfo && stakingTokenDecimal) {
+      // const total = Number(
+      //   ethers.utils.formatEther(stakeInfo[0].toString())
+      // ).toFixed(2);
+      const total = stakeInfo[0].toNumber() / 10 ** stakingTokenDecimal;
       const formattedTotal = Number(total).toLocaleString("en-US");
       return `$LOFI ${formattedTotal}`;
     }
 
     return "--";
-  }, [stakeInfo]);
+  }, [stakeInfo, stakingTokenDecimal]);
 
   const displayTotalRewards = useMemo(() => {
-    if (stakingTokenBalance) {
-      const total = Number(
-        ethers.utils.formatEther(stakeInfo[1].toString())
-      ).toFixed(2);
+    if (stakingTokenBalance && stakingTokenDecimal) {
+      // console.log(stakeInfo[1].toNumber() / 10 ** 9);
+      const total = stakeInfo[1].toNumber() / 10 ** stakingTokenDecimal;
+      // const total = Number(
+      //   ethers.utils.parseUnits(stakeInfo[1].toString(), 9)
+      // ).toFixed(2);
       const formattedTotal = Number(total).toLocaleString("en-US");
       return `$LOFI ${formattedTotal}`;
     }
 
     return "--";
-  }, [stakingTokenBalance]);
+  }, [stakingTokenBalance, stakingTokenDecimal]);
 
   const displayUnlockDate = useMemo(() => {
     if (rewardUnlockTime) {
