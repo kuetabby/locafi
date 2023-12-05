@@ -43,10 +43,10 @@ const Section3: React.FC<Props> = () => {
                 />
                 Testnet
               </ListItem>
-              <ListItem className="feature-inactive">
+              <ListItem className="feature-active">
                 <ListIcon
-                  as={LockOutlined}
-                  className="text-secondary text-2xl font-semibold"
+                  as={UnlockOutlined}
+                  className="text-white text-2xl font-semibold"
                 />
                 Staking dApp
               </ListItem>
