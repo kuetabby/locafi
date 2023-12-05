@@ -104,7 +104,7 @@ const AppFooter: React.FC<Props> = () => {
               2023 <span className="lg:text-sm">Loca.Fi</span>. All Right
               Reserved.{" "}
               <Link
-                href="mailto:locafierc20@outlook.com"
+                href="mailto:locafierc20@locafi.network"
                 rel="noopener noreferrer"
                 className="font-extrabold underline underline-offset-4 hover:text-blue-500"
               >
