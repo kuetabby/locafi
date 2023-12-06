@@ -37,6 +37,11 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
           pathname: `/dapp/stake`,
           name: "STAKING",
         },
+        {
+          href: "/dapp/scanner",
+          pathname: `/dapp/scanner`,
+          name: "SCANNER",
+        },
       ];
     }
 
@@ -72,7 +77,7 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
     <div
       className={clsx(
         isDappPath
-          ? "w-full sm:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-2/12 justify-between"
+          ? "w-full sm:w-3/5 md:w-1/2 lg:w-1/3 xl:w-1/4 justify-between"
           : "w-full sm:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
         containterClass
       )}
