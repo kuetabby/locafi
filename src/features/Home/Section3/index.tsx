@@ -53,7 +53,7 @@ const Section3: React.FC<Props> = () => {
               <ListItem className="feature-active">
                 <ListIcon
                   as={UnlockOutlined}
-                  className="text-secondary text-2xl font-semibold"
+                  className="text-white text-2xl font-semibold"
                 />
                 Scanner dApp
               </ListItem>
