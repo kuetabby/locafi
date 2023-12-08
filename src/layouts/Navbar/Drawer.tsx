@@ -61,6 +61,11 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
           pathname: `/dapp/scanner`,
           name: "SCANNER",
         },
+        {
+          href: "https://swap.locafi.network",
+          pathname: `https://swap.locafi.network`,
+          name: "SWAP",
+        },
       ];
     }
 
