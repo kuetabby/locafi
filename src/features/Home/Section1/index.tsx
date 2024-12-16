@@ -59,7 +59,7 @@ const Section1: React.FC<Props> = () => {
           innovation and ensuring data confidentiality. */}
         </div>
 
-        {/* <video
+        <video
           autoPlay={true}
           id="v0"
           loop
@@ -69,7 +69,7 @@ const Section1: React.FC<Props> = () => {
           style={{ filter: "grayscale(0.3)" }}
         >
           <source type="video/mp4" src="/welcome.mp4"></source>
-        </video> */}
+        </video>
 
         <About />
       </div>
