@@ -1,13 +1,13 @@
-export const contractAddress = "-";
+export const contractAddress = "FbR98CE4Wubp9XnqWwSCLB95BeQtM62qV9nMZ8ispump";
 export const pairAddress = "-";
 
 export const socialsLink = {
   whitepaper: "/",
-  twitter: "https://x.com/",
-  telegram: "https://t.me/",
+  twitter: "https://x.com/trenchaispl",
+  telegram: "https://t.me/TrenchAI",
   medium: "https://medium.com",
   email: "mailto:",
-  bot: "https://t.me/",
+  bot: "https://t.me/trench_ai_bot",
 };
 
 export const findUsLink = {
