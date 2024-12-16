@@ -26,7 +26,7 @@ import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "../style.css";
 import "./style.css";
-import { socialsLink } from "@/constants/links";
+import { findUsLink, socialsLink } from "@/constants/links";
 
 interface Props {
   isOpen: boolean;
@@ -77,13 +77,13 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
         name: "HOME",
       },
       {
-        href: "",
-        pathname: `#`,
+        href: findUsLink.raydium,
+        pathname: findUsLink.raydium,
         name: "BUY",
       },
       {
-        href: "#",
-        pathname: `#`,
+        href: findUsLink.pumpfun,
+        pathname: findUsLink.pumpfun,
         name: "CHART",
       },
     ];
