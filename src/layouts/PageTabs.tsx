@@ -10,6 +10,7 @@ import useHash from "@/hooks/useHashname";
 import { getHash } from "@/utils/hash";
 
 import "./style.css";
+import { findUsLink, socialsLink } from "@/constants/links";
 
 interface Props {
   containterClass: string;
@@ -57,19 +58,14 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
         name: "HOME",
       },
       {
-        href: "#about",
-        pathname: `#about`,
-        name: "ABOUT",
+        href: findUsLink.raydium,
+        pathname: findUsLink.raydium,
+        name: "BUY",
       },
       {
-        href: "#why",
-        pathname: `#why`,
-        name: "WHY US",
-      },
-      {
-        href: "#tokenomic",
-        pathname: `#tokenomic`,
-        name: "TOKENOMIC",
+        href: findUsLink.dexscreener,
+        pathname: findUsLink.dexscreener,
+        name: "CHART",
       },
     ];
   }, [isDappPath]);
@@ -79,12 +75,7 @@ const PageTabs: React.FC<Props> = ({ containterClass }) => {
   }
 
   return (
-    <div
-      className={clsx(
-        "w-full sm:w-4/5 lg:w-3/5 xl:w-1/2 justify-between",
-        containterClass
-      )}
-    >
+    <div className={clsx("w-full sm:w-52 justify-between", containterClass)}>
       {tabsList.map((item) => {
         const isActive = !!defaultHash
           ? hashname === item.pathname

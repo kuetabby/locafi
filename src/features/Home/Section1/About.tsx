@@ -5,11 +5,12 @@ import { CopyOutlined, SwapRightOutlined } from "@ant-design/icons";
 
 import { useCopyText } from "@/hooks/useCopyText";
 
+import { contractAddress, socialsLink } from "@/constants/links";
+import { TeleIcon, TwitterIcon } from "@/utils/Icon/socials";
+
 import "../style.css";
 
 interface Props {}
-
-const contractAddress = process.env.NEXT_PUBLIC_LOCAFI_CONTRACT_ADDRESS ?? "-";
 
 export const About: React.FC<Props> = () => {
   const [isVisionVisible, setIsVisionVisible] = useState(false);
@@ -51,10 +52,10 @@ export const About: React.FC<Props> = () => {
       </h1>
 
       <div className="w-full sm:w-4/5 xl:w-2/3 text-lg xs:text-xl sm:text-2xl text-center font-bold mx-auto mt-3">
-        At Loca.Fi, our commitment goes beyond innovation; it's about ensuring
-        user confidentiality alongside industry revolution. We envision a future
-        where confidentiality seamlessly integrates with technological progress
-        within our scalable blockchain ecosystem.
+        At Trench AI, our vision is to transform content creation and
+        communication with the power of advanced AI. We strive to make
+        creativity effortless and accessible, empowering users to produce
+        engaging multimedia content seamlessly.
         {/* Loca.Fi is dedicated not only
         to reshaping industries but also safeguarding user confidentiality,
         creating a future where technology and individual data security coexist
@@ -71,7 +72,22 @@ export const About: React.FC<Props> = () => {
             />
           </div>
         </div>
-        <Link href="https://loca-fi.gitbook.io" target="_blank">
+
+        <div className="w-full mx-auto justify-center flex space-x-3 mt-10">
+          <a
+            href={socialsLink.telegram}
+            className="bg-vibrant-purple p-2 rounded-full shadow hover:shadow-md transition"
+          >
+            <TeleIcon className="fill-white" style={{ fontSize: "1.5em" }} />
+          </a>
+          <a
+            href={socialsLink.twitter}
+            className="bg-vibrant-purple p-2 rounded-full shadow hover:shadow-md transition"
+          >
+            <TwitterIcon className="fill-white" style={{ fontSize: "1.4em" }} />
+          </a>
+        </div>
+        {/* <Link href="https://loca-fi.gitbook.io" target="_blank">
           <Button
             rightIcon={<SwapRightOutlined />}
             className={`whitepaper-btn ${
@@ -80,7 +96,7 @@ export const About: React.FC<Props> = () => {
           >
             Whitepaper
           </Button>
-        </Link>
+        </Link> */}
         {/* <Button
                 ref={whitepaperRef}
                 className={`whitepaper-btn ${

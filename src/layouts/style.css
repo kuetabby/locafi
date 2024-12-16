@@ -12,7 +12,11 @@
 
 .base-main-container {
   /* @apply w-full h-full min-h-screen bg-black mb-16 sm:mb-0 text-white; */
-  @apply w-full h-full min-h-screen bg-dark-main mb-0 text-white;
+  @apply w-full h-full bg-dark-main min-h-screen mb-0 text-white;
+  /* background: #272363; */
+  /* backdrop-filter: blur(30px); */
+
+  /* @apply w-full h-full min-h-screen mb-0 text-white; */
 }
 
 .nav-anchor {

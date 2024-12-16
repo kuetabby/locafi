@@ -52,7 +52,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
       <main className={clsx("base-main-container", lato.className)}>
         {children}
 
-        <div
+        {/* <div
           className={`${
             isScroll ? "fixed" : "hidden"
           } bottom-12 right-2 z-[999] animate-fadeInBase`}
@@ -65,7 +65,7 @@ const BaseLayout: React.FC<Props> = ({ children }) => {
           >
             <ArrowUpOutlined className="text-xl lg:text-3xl font-bold mt-2" />
           </Button>
-        </div>
+        </div> */}
       </main>
       <Footer />
     </Provider>

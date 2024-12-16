@@ -5,10 +5,9 @@ import BaseLayout from "@/layouts";
 
 import "./globals.css";
 
-const app_title = "Loca.Fi - Redefining Connectivity Through Decentralization";
-const app_name = "Loca.Fi";
-const description =
-  "Discover Loca.Fi, a pioneering blockchain ecosystem empowering global connectivity. Experience secure, transparent solutions fostering innovation, community engagement, and a decentralized future.";
+const app_title = "TrenchAI";
+const app_name = "TrenchAI";
+const description = "";
 
 export const metadata: Metadata = {
   title: app_title,

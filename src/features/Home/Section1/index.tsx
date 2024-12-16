@@ -25,7 +25,7 @@ const Section1: React.FC<Props> = () => {
   }, []);
 
   return (
-    <div className="welcome-wrapper py-16">
+    <div className="welcome-wrapper">
       <div id="welcome" className="h-20" />
       <Image
         src={Background5}
@@ -42,19 +42,24 @@ const Section1: React.FC<Props> = () => {
           }`}
         >
           Welcome to
-          <span className="locafi-title ml-2">Loca.Fi</span>
+          <span className="locafi-title ml-2">TrenchAI</span>
         </h1>
         <div className="welcome-description">
-          A pioneering Layer 2 blockchain initiative, Loca.Fi is propelling
+          A trailblazing AI-powered platform, Trench AI is revolutionizing
+          content creation through innovative multimedia solutions. By
+          harnessing state-of-the-art AI technology, Trench AI empowers users
+          with tools that enhance creativity, accessibility, and engagement
+          across various formats.
+          {/* A pioneering Layer 2 blockchain initiative, Loca.Fi is propelling
           industry transformation through decentralized solutions. Leveraging
           advanced Layer 2 technology, Loca.Fi enhances scalability, efficiency,
-          transparency, and security for users.
+          transparency, and security for users. */}
           {/* As a leader in Layer 2
           advancements, Loca.Fi is dedicated to pioneering technological
           innovation and ensuring data confidentiality. */}
         </div>
 
-        <video
+        {/* <video
           autoPlay={true}
           id="v0"
           loop
@@ -64,7 +69,7 @@ const Section1: React.FC<Props> = () => {
           style={{ filter: "grayscale(0.3)" }}
         >
           <source type="video/mp4" src="/welcome.mp4"></source>
-        </video>
+        </video> */}
 
         <About />
       </div>

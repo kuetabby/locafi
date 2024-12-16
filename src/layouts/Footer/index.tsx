@@ -39,14 +39,7 @@ const AppFooter: React.FC<Props> = () => {
         className="w-full h-full absolute top-0 left-0 bg-cover bg-no-repeat"
       /> */}
       <div className="app-footer-wrapper">
-        <div className="w-3/4 sm:w-full lg:w-11/12 2xl:w-4/5 flex flex-wrap items-center justify-between lg:justify-center m-auto">
-          {/* <div className="w-full lg:w-1/5 mb-3 lg:mb-0">
-            <Image
-              src={AppLogo}
-              alt="app-logo"
-              className="w-14 sm:w-20 lg:w-28 h-14 sm:h-20 lg:h-28 mx-auto rounded-full"
-            />
-          </div> */}
+        {/* <div className="w-3/4 sm:w-full lg:w-11/12 2xl:w-4/5 flex flex-wrap items-center justify-between lg:justify-center m-auto">
 
           <div className="w-full lg:w-4/5 flex">
             <Link
@@ -95,21 +88,21 @@ const AppFooter: React.FC<Props> = () => {
               </div>
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className="all-reserved">
-          <div className="flex items-center my-2">
+          <div className="flex items-center my-2 text-white">
             <CopyrightOutlined style={{ fontSize: "0.75em" }} />
             <div className="ml-2 text-xs font-semibold">
-              2023 <span className="lg:text-sm">Loca.Fi</span>. All Right
+              2024 <span className="lg:text-sm">TrenchAI</span>. All Right
               Reserved.{" "}
-              <Link
-                href="mailto:locafierc20@locafi.network"
+              {/* <Link
+                href="mailto:"
                 rel="noopener noreferrer"
                 className="font-extrabold underline underline-offset-4 hover:text-blue-500"
               >
                 Contact Us
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

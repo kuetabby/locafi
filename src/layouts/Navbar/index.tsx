@@ -17,6 +17,7 @@ import AppLogo from "@/assets/logo-app.png";
 import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "./style.css";
+import { socialsLink } from "@/constants/links";
 
 interface Props {}
 
@@ -81,15 +82,17 @@ const Navbar: React.FC<Props> = () => {
               modalTitleIconUrl={AppLogoTransparent.src}
             />
           ) : (
-            <Link href="/dapp/stake" className="w-auto">
-              <Button className="tw-connect-wallet w-full">Launch dApp</Button>
+            <Link href={socialsLink.bot} className="w-auto">
+              <Button className="tw-connect-wallet w-full">
+                Launch TrenchAI
+              </Button>
             </Link>
           )}
         </div>
 
         {/* small devices */}
         <div className="sm:hidden w-1/2 text-center text-3xl font-extrabold">
-          Loca.Fi
+          TrenchAI
         </div>
         <div className="sm:hidden w-1/4 text-right animate-fadeInBasic">
           <Button

@@ -56,8 +56,8 @@ const Home: React.FC<Props> = () => {
   return (
     <div className="homepage-container">
       <Section1 />
-      <Section2 />
-      <Section3 />
+      {/* <Section2 /> */}
+      {/* <Section3 /> */}
     </div>
   );
 };

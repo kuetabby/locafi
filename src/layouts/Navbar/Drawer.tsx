@@ -26,6 +26,7 @@ import AppLogoTransparent from "@/assets/logo-transparent.png";
 
 import "../style.css";
 import "./style.css";
+import { socialsLink } from "@/constants/links";
 
 interface Props {
   isOpen: boolean;
@@ -76,19 +77,14 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
         name: "HOME",
       },
       {
-        href: "#about",
-        pathname: `#about`,
-        name: "ABOUT",
+        href: "",
+        pathname: `#`,
+        name: "BUY",
       },
       {
-        href: "#why",
-        pathname: `#why`,
-        name: "WHY US",
-      },
-      {
-        href: "#tokenomic",
-        pathname: `#tokenomic`,
-        name: "TOKENOMIC",
+        href: "#",
+        pathname: `#`,
+        name: "CHART",
       },
     ];
   }, [isDappPath]);
@@ -112,7 +108,7 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
           style={{ fontSize: 20 }}
         />
         <DrawerHeader className="bg-dark-main text-3xl">
-          <span className="navbar-title">Loca.Fi</span>
+          <span className="navbar-title">TrenchAI</span>
         </DrawerHeader>
 
         <DrawerBody className="bg-dark-main">
@@ -151,8 +147,10 @@ export const NavbarDrawer: React.FC<Props> = ({ isOpen, onClose }) => {
               modalTitleIconUrl={AppLogoTransparent.src}
             />
           ) : (
-            <Link href="/dapp/stake" className="w-full">
-              <Button className="tw-connect-wallet w-full">Launch dApp</Button>
+            <Link href={socialsLink.bot} className="w-full">
+              <Button className="tw-connect-wallet w-full">
+                Launch TrenchAI
+              </Button>
             </Link>
           )}
         </DrawerFooter>
